@@ -4,7 +4,7 @@ import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;
 import org.junit.Before;
 
-public class JsonPlaceHolderaBaseUrl {
+public class JsonPlaceHolderBaseUrl {
     //Create RequestSpecification object
     protected RequestSpecification spec;
 

@@ -1,7 +1,6 @@
 package get_method;
 
-import base_urls.DummyBaseUrl;
-import base_urls.JsonPlaceHolderaBaseUrl;
+import base_urls.JsonPlaceHolderBaseUrl;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import static org.hamcrest.Matchers.*;
@@ -10,7 +9,7 @@ import static io.restassured.RestAssured.*;
 
 
 
-public class GetRequest04 extends JsonPlaceHolderaBaseUrl {
+public class GetRequest04 extends JsonPlaceHolderBaseUrl {
 
     /*
         When

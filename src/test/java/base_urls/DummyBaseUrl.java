@@ -11,6 +11,6 @@ public class DummyBaseUrl{
     //If you use @Before annotation before a method, it means the method will be executed before every test method
     @Before
     public void setUp(){
-        spec = new RequestSpecBuilder().setBaseUri("http://dummy.restapiexample.com").build();
+        spec = new RequestSpecBuilder().setBaseUri("http://dummy.restapiexample.com/api/v1").build();
     }
 }

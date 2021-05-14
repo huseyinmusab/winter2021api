@@ -33,14 +33,19 @@ public class GetRequest02 extends HerokuappBaseUrl {
          //2)Set the expected data
 
          //3)Send the request
-         Response response = given().spec(spec).when().get("/{first}/{second}");
+         Response response = given().
+                                     spec(spec).
+                                     when().
+                                     get("/{first}/{second}");
          response.prettyPrint();
 
          //4)Assert the output
          response.then().assertThat().statusCode(404).statusLine("HTTP/1.1 404 Not Found");
          //assertTrue(true)==>Pass          assertTrue(false)==>Fail
+
          assertTrue(response.asString().contains("Not Found"));
          //assertFalse(false)==>Pass          assertFalse(true)==>Fail
+
          assertFalse(response.asString().contains("TechProEd"));
          //assertEquals(firstParameter, secondParameter); If the firstParameter matches with the secondParameter
          //you will get passed otherwise you will get failed

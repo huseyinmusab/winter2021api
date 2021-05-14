@@ -1,6 +1,6 @@
 package get_method;
 
-import base_urls.JsonPlaceHolderaBaseUrl;
+import base_urls.JsonPlaceHolderBaseUrl;
 import io.restassured.response.Response;
 import static org.hamcrest.Matchers.*;
 import org.junit.Test;
@@ -9,7 +9,7 @@ import static org.junit.Assert.*;
 
 
 
-public class GetRequest03 extends JsonPlaceHolderaBaseUrl {
+public class GetRequest03 extends JsonPlaceHolderBaseUrl {
   /*
              When
 		 	I send a GET request to REST API URL https://jsonplaceholder.typicode.com/todos/23
