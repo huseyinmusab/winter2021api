@@ -29,20 +29,32 @@ public class GetRequest04 extends JsonPlaceHolderBaseUrl {
          spec.pathParam("first","todos");
 
          //2)Set the expected Data
+
+
          //3)Send the request
-         Response response = given().spec(spec).accept("application/json").when().get("/{first}");
+         Response response = given()
+                                    .spec(spec)
+                                    .accept("application/json")
+                                    .when()
+                                    .get("/{first}");
          response.prettyPrint();
 
-         //4)Assert the outout
+         //4)Assert the output
          response.
                  then().
                  assertThat().
                  statusCode(200).
-                 contentType(ContentType.JSON).//intead of “application/JSON”
+                 contentType(ContentType.JSON).//instead of “application/JSON”,it is more dynamic
                  body("id", hasSize(200)).
                  body("title",hasItem("quis ut nam facilis et officia qui")).
                  body("userId",hasItems(2,7,9));
 
+         //here we learnt
+         //hasSize()
+         //hasItem()
+         //hasItems()
+         //and
+         //more dynmaic way of content type ==>contentType(ContentType.JSON)
 
 
 

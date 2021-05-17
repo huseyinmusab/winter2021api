@@ -18,15 +18,21 @@ public class GetRequest05 extends HerokuappBaseUrl {
     public void get01(){
         //1)Set the url
         spec.pathParam("first","booking").queryParams("firstname","Mary",
-                "lastname","Jackson");//on postman by using "?" query parameters,in automayion by queryParams()
+                "lastname","Jackson");//on postman by using "?" query parameters,in automation by queryParams()
 
         //2) Set the expected data
 
         //3) Send the Request
-        Response response = given().spec(spec).when().get("/{first}");
+        Response response = given()
+                                   .spec(spec)
+                                   .when()
+                                   .get("/{first}");
         response.prettyPrint();
 
-        response.then().assertThat().statusCode(200);
+        response
+                .then()
+                .assertThat()
+                .statusCode(200);
 
         assertTrue(response.asString().contains("bookingid"));//If Mary Jackson exists, i can get bookingid=8
 

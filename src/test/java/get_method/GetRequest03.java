@@ -30,7 +30,11 @@ public class GetRequest03 extends JsonPlaceHolderBaseUrl {
         //2) Set the expected data
 
         //3) Send the request
-        Response response = given().spec(spec.accept("application/JSON")).when().get("/{first}/{second}");
+        Response response = given()
+                                    .spec(spec.accept("application/JSON"))
+                                    .when()
+                                    .get("/{first}/{second}");
+
         response.prettyPrint();
         System.out.println("Status Code: " +response.getStatusCode());
 
@@ -40,6 +44,8 @@ public class GetRequest03 extends JsonPlaceHolderBaseUrl {
             But there is another assertion which is "Soft Assertion"(Verification), it executes all tests and gives you report about
             the passed ones and failed ones
          */
+
+        //1. WAY
         response.
                 then().
                 assertThat().
@@ -52,7 +58,8 @@ public class GetRequest03 extends JsonPlaceHolderBaseUrl {
             Note: If you use body() for every step it uses hard assertion.
                   If you use just a single body() with multiple test steps, it gives you report for every failed test
          */
-        //2.way
+
+        //2.WAY
         response.
                 then().
                 assertThat().
@@ -62,7 +69,8 @@ public class GetRequest03 extends JsonPlaceHolderBaseUrl {
                         "completed",equalTo(false),
                         "userId",equalTo(2));
 
-        //3.way
+
+        //3.WAY
         //HTTP Status Code should be 200
         //assertEquals(expected,actual)
         assertEquals(200,response.getStatusCode());

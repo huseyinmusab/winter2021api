@@ -12,7 +12,9 @@ import static io.restassured.RestAssured.given;
 import static org.junit.Assert.*;
 
 public class GetRequest06dt extends DummyBaseUrl {
-/*
+
+
+ /*
       When
             I send a GET request to REST API URL http://dummy.restapiexample.com/api/v1/employee/8
       Then
@@ -36,11 +38,11 @@ public class GetRequest06dt extends DummyBaseUrl {
     @Test
     public void get01(){
         //1) Set the url
-
         spec.pathParams("employeeName","employee","id",8);
 
 
         //2) Set the expected data
+
 
         //3) Send the Request
         Response response = given().
@@ -51,6 +53,7 @@ public class GetRequest06dt extends DummyBaseUrl {
         response.prettyPrint();
 
 
+
         //4)Assertion
         response.then().statusCode(200).contentType(ContentType.JSON).
                 header("Connection","keep-alive").body("status", equalTo("success"),
@@ -59,7 +62,6 @@ public class GetRequest06dt extends DummyBaseUrl {
                 "data.employee_age", equalTo(55),
                 "data.profile_image", equalTo(""),
                 "message", equalTo("Successfully! Record has been fetched."));
-
 
     }
 

@@ -40,13 +40,17 @@ public class GetRequest02 extends HerokuappBaseUrl {
          response.prettyPrint();
 
          //4)Assert the output
-         response.then().assertThat().statusCode(404).statusLine("HTTP/1.1 404 Not Found");
+         response
+                 .then()
+                 .assertThat()
+                 .statusCode(404)
+                 .statusLine("HTTP/1.1 404 Not Found");
          //assertTrue(true)==>Pass          assertTrue(false)==>Fail
 
          assertTrue(response.asString().contains("Not Found"));
          //assertFalse(false)==>Pass          assertFalse(true)==>Fail
 
-         assertFalse(response.asString().contains("TechProEd"));
+         assertFalse(response.asString().contains("TechProEd"));//contain methodu kullanmak icin response a String muamelesi yapiyoruz
          //assertEquals(firstParameter, secondParameter); If the firstParameter matches with the secondParameter
          //you will get passed otherwise you will get failed
            assertEquals(response.getHeader("Server"), "Cowboy");

@@ -27,7 +27,10 @@ public class GetRequest07dt extends DummyBaseUrl {
     @Test
     public void get01(){
         spec.pathParam("employeesName","employees");
-        Response response=given().spec(spec).when().get("/{employeesName}");
+        Response response=given()
+                                 .spec(spec)
+                                 .when()
+                                 .get("/{employeesName}");
 
         response.prettyPrint();
 
@@ -41,6 +44,7 @@ public class GetRequest07dt extends DummyBaseUrl {
         softAssert.assertEquals(json.getString("data[2].employee_name"), "Ashton Cox","name does not match");
         softAssert.assertEquals(json.getString("data[5].employee_salary"),"372000","salary doe not match");
         softAssert.assertEquals(json.getInt("data[-1].employee_age" ), 23,"age does not match");
+
         //How to assert multiple data by using JsonPath class?
         //and 21,23,61 are among the ages
         //cretae a list anf put test data in that list
