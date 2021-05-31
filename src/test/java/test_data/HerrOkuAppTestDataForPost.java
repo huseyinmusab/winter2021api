@@ -5,6 +5,20 @@ import java.util.Map;
 
 public class HerrOkuAppTestDataForPost {
 
+    //For ObjectMappers test data
+   public  String expected=" {\n" +
+           "                                            \"firstname\": \"Mark\",\n" +
+           "                                            \"lastname\": \"Jones\",\n" +
+           "                                            \"totalprice\":769,\n" +
+           "                                            \"depositpaid\": true,\n" +
+           "                                            \"bookingdates\": {\n" +
+           "                                                \"checkin\": \"2018-11-17\",\n" +
+           "                                                \"checkout\": \"2020-05-11\"\n" +
+           "                                             }\n" +
+           "                                          }";
+
+
+
     //for inner booking part
     public Map<String,Object>bookingDatesSetUp(){
         Map<String,Object>bookingDates = new HashMap<>();

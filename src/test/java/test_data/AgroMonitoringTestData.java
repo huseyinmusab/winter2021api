@@ -4,12 +4,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class AgroMonitoringTestData {
+
     //we prefered to use Float instead of using List
     public float coordinates[][][]={ { {-121.1958f, 37.6683f},
-                                       {-121.1779f,37.6687f},
-                                       {-121.1773f,37.6792f},
-                                       {-121.1958f,37.6792f},
-                                       {-121.1958f,37.6683f}  } };
+            {-121.1779f,37.6687f},
+            {-121.1773f,37.6792f},
+            {-121.1958f,37.6792f},
+            {-121.1958f,37.6683f}  } };
+
+
+
+
 
     public Map<String ,Object>geometrySetUp(){
         Map<String,Object>geometry = new HashMap<>();
@@ -18,7 +23,9 @@ public class AgroMonitoringTestData {
         return geometry;
     }
 
-    public  Map<String,Object>properties =new HashMap<>();// i cretaed an empty map ,because it is empty
+    public  Map<String,Object>properties =new HashMap<>();// i cretaed an empty map ,because it is empty==>"properties": {}
+
+
 
     public Map<String,Object> geoJsonSetUp(){
         Map<String,Object>geoJson= new HashMap<>();

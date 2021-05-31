@@ -14,7 +14,7 @@ import static io.restassured.RestAssured.given;
 public class GetRequest07dt extends DummyBaseUrl {
 
      /*
- Use JsonPath Class and Soft Assertion to do;
+      Use JsonPath Class and Soft Assertion to do;
         When
             I send Get Request to http://dummy.restapiexample.com/api/v1/employees
         Then
@@ -41,9 +41,11 @@ public class GetRequest07dt extends DummyBaseUrl {
         System.out.println(response.getContentType());
 
         softAssert.assertEquals(response.statusCode(),200);//why response? because i dont have any method for statuscode in json
+
         softAssert.assertEquals(json.getString("data[2].employee_name"), "Ashton Cox","name does not match");
         softAssert.assertEquals(json.getString("data[5].employee_salary"),"372000","salary doe not match");
         softAssert.assertEquals(json.getInt("data[-1].employee_age" ), 23,"age does not match");
+
 
         //How to assert multiple data by using JsonPath class?
         //and 21,23,61 are among the ages
@@ -56,6 +58,7 @@ public class GetRequest07dt extends DummyBaseUrl {
         //Use containAll() method
         softAssert.assertTrue(json.getList("data.employee_age").containsAll(ageList),"AT LEAST ONE OF THE AGE DOES NOT EXIST");
         softAssert.assertAll();
+
 
 
 

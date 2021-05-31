@@ -62,7 +62,7 @@ public class PostRequest01 extends HerokuappBaseUrl {
 
 
 
-        Map<Object,Object>actualData =response.as(HashMap.class);//USAGE OF GSON==>json is converting to a map
+        Map<Object,Object>actualData =response.as(HashMap.class);//USAGE OF GSON==>json is converting to a map,java
         System.out.println(actualData); // to see the actual data on the console
 
 
@@ -75,7 +75,7 @@ public class PostRequest01 extends HerokuappBaseUrl {
         assertEquals(expectedData.bookingDatesSetUp().get("checkin"), ((Map)((Map)actualData.get("booking")).get("bookingdates")).get("checkin")); //json path or gson ways we can use,this one gson
         assertEquals(expectedData.bookingDatesSetUp().get("checkout"), ((Map)((Map)actualData.get("booking")).get("bookingdates")).get("checkout")); //json path or gson ways we can use,this one gson
 
-        //2.way(easier) by jsonpath and json object
+        //2.way(easier) by jsonpath and json object (if the json data is complicated)
         JsonPath json= response.jsonPath();
 
         assertEquals(expectedData.expectedDataSetUp().get("firstname"), json.getString("booking.firstname"));

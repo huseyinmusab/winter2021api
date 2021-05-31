@@ -40,7 +40,10 @@ public class GetRequest10dt extends HerokuappBaseUrl {
 
         Map<String,Object> expectedDataMap =expectedDataObj.setUpData();
 
-        Response response =given().spec(spec).when().get("/{bookingName}/{id}");
+        Response response =given().
+                                   spec(spec).
+                                   when().
+                                   get("/{bookingName}/{id}");
         response.prettyPrint();
 
         //Use de-serialization

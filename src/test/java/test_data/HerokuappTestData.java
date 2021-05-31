@@ -19,9 +19,6 @@ public class HerokuappTestData {
         bookingDetailsMap.put("bookingdates",bookingDatesMap);
         bookingDetailsMap.put("additionalneeds","Breakfast");
 
-
-
-
         return bookingDetailsMap;
     }
 

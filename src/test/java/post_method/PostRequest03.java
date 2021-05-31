@@ -138,15 +138,18 @@ public class PostRequest03 extends AgroMonitoringBaseUrl {
         //2)Set the expected Data
         AgroMonitoringTestData expectedData = new AgroMonitoringTestData();
 
+
         //3)Send the request
         Response response = given().
-                spec(spec).
-                contentType(ContentType.JSON).
-                body(expectedData.expectedDataSetUp()).
-                when().
-                post("/{first}/{second}/{third}");
+                                   spec(spec).
+                                   contentType(ContentType.JSON).
+                                   body(expectedData.expectedDataSetUp()).
+                                   when().
+                                   post("/{first}/{second}/{third}");
 
         response.prettyPrint();
+
+
 
         //4)Assertion
         response.
@@ -159,10 +162,6 @@ public class PostRequest03 extends AgroMonitoringBaseUrl {
                         "name",equalTo("Polygon Sample"),
                         "center[1]",equalTo(37.67385f),
                         "user_id",equalTo("5fd8c02a3da20c000759e0f8"));
-
-
-
-
 
     }
 

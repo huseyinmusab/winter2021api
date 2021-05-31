@@ -29,6 +29,7 @@ public class GetRequest05 extends HerokuappBaseUrl {
                                    .get("/{first}");
         response.prettyPrint();
 
+        //4)Assertion
         response
                 .then()
                 .assertThat()

@@ -26,7 +26,8 @@ public class GetRequest02 extends HerokuappBaseUrl {
      public void get02(){
 
          //1)Set the URL
-         //String url = "https://restful-booker.herokuapp.com/booking/1001"; ==> Not recommended
+         //String url = "https://restful-booker.herokuapp.com/booking/1001"; ==> Not recommended api
+
          spec.pathParams("first", "booking",
                  "second", 1001);
 
@@ -45,6 +46,7 @@ public class GetRequest02 extends HerokuappBaseUrl {
                  .assertThat()
                  .statusCode(404)
                  .statusLine("HTTP/1.1 404 Not Found");
+
          //assertTrue(true)==>Pass          assertTrue(false)==>Fail
 
          assertTrue(response.asString().contains("Not Found"));

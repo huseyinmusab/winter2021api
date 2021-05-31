@@ -1,6 +1,7 @@
 package get_method;
 
 import base_urls.JsonPlaceHolderBaseUrl;
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import static org.hamcrest.Matchers.*;
 import org.junit.Test;
@@ -31,7 +32,7 @@ public class GetRequest03 extends JsonPlaceHolderBaseUrl {
 
         //3) Send the request
         Response response = given()
-                                    .spec(spec.accept("application/JSON"))
+                                    .spec(spec.accept("application/JSON")) //spec.accept()
                                     .when()
                                     .get("/{first}/{second}");
 
@@ -68,6 +69,8 @@ public class GetRequest03 extends JsonPlaceHolderBaseUrl {
                 body("title", equalTo("et itaque necessitatibus maxime molestiae qui quas velit"),
                         "completed",equalTo(false),
                         "userId",equalTo(2));
+
+
 
 
         //3.WAY

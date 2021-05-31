@@ -54,7 +54,7 @@ public class GetRequest04 extends JsonPlaceHolderBaseUrl {
          //hasItem()
          //hasItems()
          //and
-         //more dynmaic way of content type ==>contentType(ContentType.JSON)
+         //more dynamic way of content type ==>contentType(ContentType.JSON)
 
 
 
